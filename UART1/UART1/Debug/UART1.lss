@@ -1,0 +1,192 @@
+
+UART1.elf:     file format elf32-avr
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .text         000000fc  00000000  00000000  00000074  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  1 .data         00000012  00800060  000000fc  00000170  2**0
+                  CONTENTS, ALLOC, LOAD, DATA
+  2 .comment      00000030  00000000  00000000  00000182  2**0
+                  CONTENTS, READONLY
+  3 .note.gnu.avr.deviceinfo 0000003c  00000000  00000000  000001b4  2**2
+                  CONTENTS, READONLY
+  4 .debug_aranges 00000058  00000000  00000000  000001f0  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  5 .debug_info   00000705  00000000  00000000  00000248  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  6 .debug_abbrev 00000649  00000000  00000000  0000094d  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  7 .debug_line   0000072a  00000000  00000000  00000f96  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  8 .debug_frame  00000098  00000000  00000000  000016c0  2**2
+                  CONTENTS, READONLY, DEBUGGING
+  9 .debug_str    00006143  00000000  00000000  00001758  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 10 .debug_loc    000000d8  00000000  00000000  0000789b  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 11 .debug_ranges 00000038  00000000  00000000  00007973  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 12 .debug_macro  000001bd  00000000  00000000  000079ab  2**0
+                  CONTENTS, READONLY, DEBUGGING
+
+Disassembly of section .text:
+
+00000000 <__vectors>:
+   0:	29 c0       	rjmp	.+82     	; 0x54 <__ctors_end>
+   2:	00 00       	nop
+   4:	3a c0       	rjmp	.+116    	; 0x7a <__bad_interrupt>
+   6:	00 00       	nop
+   8:	38 c0       	rjmp	.+112    	; 0x7a <__bad_interrupt>
+   a:	00 00       	nop
+   c:	36 c0       	rjmp	.+108    	; 0x7a <__bad_interrupt>
+   e:	00 00       	nop
+  10:	34 c0       	rjmp	.+104    	; 0x7a <__bad_interrupt>
+  12:	00 00       	nop
+  14:	32 c0       	rjmp	.+100    	; 0x7a <__bad_interrupt>
+  16:	00 00       	nop
+  18:	30 c0       	rjmp	.+96     	; 0x7a <__bad_interrupt>
+  1a:	00 00       	nop
+  1c:	2e c0       	rjmp	.+92     	; 0x7a <__bad_interrupt>
+  1e:	00 00       	nop
+  20:	2c c0       	rjmp	.+88     	; 0x7a <__bad_interrupt>
+  22:	00 00       	nop
+  24:	2a c0       	rjmp	.+84     	; 0x7a <__bad_interrupt>
+  26:	00 00       	nop
+  28:	28 c0       	rjmp	.+80     	; 0x7a <__bad_interrupt>
+  2a:	00 00       	nop
+  2c:	26 c0       	rjmp	.+76     	; 0x7a <__bad_interrupt>
+  2e:	00 00       	nop
+  30:	24 c0       	rjmp	.+72     	; 0x7a <__bad_interrupt>
+  32:	00 00       	nop
+  34:	22 c0       	rjmp	.+68     	; 0x7a <__bad_interrupt>
+  36:	00 00       	nop
+  38:	20 c0       	rjmp	.+64     	; 0x7a <__bad_interrupt>
+  3a:	00 00       	nop
+  3c:	1e c0       	rjmp	.+60     	; 0x7a <__bad_interrupt>
+  3e:	00 00       	nop
+  40:	1c c0       	rjmp	.+56     	; 0x7a <__bad_interrupt>
+  42:	00 00       	nop
+  44:	1a c0       	rjmp	.+52     	; 0x7a <__bad_interrupt>
+  46:	00 00       	nop
+  48:	18 c0       	rjmp	.+48     	; 0x7a <__bad_interrupt>
+  4a:	00 00       	nop
+  4c:	16 c0       	rjmp	.+44     	; 0x7a <__bad_interrupt>
+  4e:	00 00       	nop
+  50:	14 c0       	rjmp	.+40     	; 0x7a <__bad_interrupt>
+	...
+
+00000054 <__ctors_end>:
+  54:	11 24       	eor	r1, r1
+  56:	1f be       	out	0x3f, r1	; 63
+  58:	cf e5       	ldi	r28, 0x5F	; 95
+  5a:	d8 e0       	ldi	r29, 0x08	; 8
+  5c:	de bf       	out	0x3e, r29	; 62
+  5e:	cd bf       	out	0x3d, r28	; 61
+
+00000060 <__do_copy_data>:
+  60:	10 e0       	ldi	r17, 0x00	; 0
+  62:	a0 e6       	ldi	r26, 0x60	; 96
+  64:	b0 e0       	ldi	r27, 0x00	; 0
+  66:	ec ef       	ldi	r30, 0xFC	; 252
+  68:	f0 e0       	ldi	r31, 0x00	; 0
+  6a:	02 c0       	rjmp	.+4      	; 0x70 <__do_copy_data+0x10>
+  6c:	05 90       	lpm	r0, Z+
+  6e:	0d 92       	st	X+, r0
+  70:	a2 37       	cpi	r26, 0x72	; 114
+  72:	b1 07       	cpc	r27, r17
+  74:	d9 f7       	brne	.-10     	; 0x6c <__do_copy_data+0xc>
+  76:	28 d0       	rcall	.+80     	; 0xc8 <main>
+  78:	3f c0       	rjmp	.+126    	; 0xf8 <_exit>
+
+0000007a <__bad_interrupt>:
+  7a:	c2 cf       	rjmp	.-124    	; 0x0 <__vectors>
+
+0000007c <UART_INIT>:
+  7c:	8f ef       	ldi	r24, 0xFF	; 255
+  7e:	89 b9       	out	0x09, r24	; 9
+  80:	85 e4       	ldi	r24, 0x45	; 69
+  82:	80 bd       	out	0x20, r24	; 32
+  84:	8a b1       	in	r24, 0x0a	; 10
+  86:	88 61       	ori	r24, 0x18	; 24
+  88:	8a b9       	out	0x0a, r24	; 10
+  8a:	80 b5       	in	r24, 0x20	; 32
+  8c:	86 60       	ori	r24, 0x06	; 6
+  8e:	80 bd       	out	0x20, r24	; 32
+  90:	08 95       	ret
+
+00000092 <uart_t>:
+  92:	5d 9b       	sbis	0x0b, 5	; 11
+  94:	fe cf       	rjmp	.-4      	; 0x92 <uart_t>
+  96:	8c b9       	out	0x0c, r24	; 12
+  98:	08 95       	ret
+
+0000009a <uart_strtx>:
+  9a:	0f 93       	push	r16
+  9c:	1f 93       	push	r17
+  9e:	cf 93       	push	r28
+  a0:	8c 01       	movw	r16, r24
+  a2:	82 e0       	ldi	r24, 0x02	; 2
+  a4:	f6 df       	rcall	.-20     	; 0x92 <uart_t>
+  a6:	f8 01       	movw	r30, r16
+  a8:	80 81       	ld	r24, Z
+  aa:	88 23       	and	r24, r24
+  ac:	49 f0       	breq	.+18     	; 0xc0 <uart_strtx+0x26>
+  ae:	c0 e0       	ldi	r28, 0x00	; 0
+  b0:	f0 df       	rcall	.-32     	; 0x92 <uart_t>
+  b2:	cf 5f       	subi	r28, 0xFF	; 255
+  b4:	f8 01       	movw	r30, r16
+  b6:	ec 0f       	add	r30, r28
+  b8:	f1 1d       	adc	r31, r1
+  ba:	80 81       	ld	r24, Z
+  bc:	81 11       	cpse	r24, r1
+  be:	f8 cf       	rjmp	.-16     	; 0xb0 <uart_strtx+0x16>
+  c0:	cf 91       	pop	r28
+  c2:	1f 91       	pop	r17
+  c4:	0f 91       	pop	r16
+  c6:	08 95       	ret
+
+000000c8 <main>:
+
+
+
+
+int main(void)
+{
+  c8:	cf 93       	push	r28
+  ca:	df 93       	push	r29
+  cc:	cd b7       	in	r28, 0x3d	; 61
+  ce:	de b7       	in	r29, 0x3e	; 62
+  d0:	61 97       	sbiw	r28, 0x11	; 17
+  d2:	0f b6       	in	r0, 0x3f	; 63
+  d4:	f8 94       	cli
+  d6:	de bf       	out	0x3e, r29	; 62
+  d8:	0f be       	out	0x3f, r0	; 63
+  da:	cd bf       	out	0x3d, r28	; 61
+	UART_INIT();
+  dc:	cf df       	rcall	.-98     	; 0x7c <UART_INIT>
+	while (1)
+	{
+		
+		char str []= {"UART Initialized"};
+  de:	81 e1       	ldi	r24, 0x11	; 17
+  e0:	e0 e6       	ldi	r30, 0x60	; 96
+  e2:	f0 e0       	ldi	r31, 0x00	; 0
+  e4:	de 01       	movw	r26, r28
+  e6:	11 96       	adiw	r26, 0x01	; 1
+  e8:	01 90       	ld	r0, Z+
+  ea:	0d 92       	st	X+, r0
+  ec:	8a 95       	dec	r24
+  ee:	e1 f7       	brne	.-8      	; 0xe8 <main+0x20>
+		
+		uart_strtx(str);
+  f0:	ce 01       	movw	r24, r28
+  f2:	01 96       	adiw	r24, 0x01	; 1
+  f4:	d2 df       	rcall	.-92     	; 0x9a <uart_strtx>
+  f6:	f3 cf       	rjmp	.-26     	; 0xde <main+0x16>
+
+000000f8 <_exit>:
+  f8:	f8 94       	cli
+
+000000fa <__stop_program>:
+  fa:	ff cf       	rjmp	.-2      	; 0xfa <__stop_program>
